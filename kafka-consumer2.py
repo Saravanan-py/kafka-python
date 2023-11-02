@@ -1,11 +1,11 @@
 from kafka import KafkaConsumer
-from kafka import TopicPartition , OffsetAndMetadata
+from kafka import TopicPartition, OffsetAndMetadata
 
 
 import json
 
 
-consumer = KafkaConsumer ('mytopic6',bootstrap_servers = ['localhost:9092'],
+consumer = KafkaConsumer('mytopic6',bootstrap_servers = ['localhost:9092'],
                           value_deserializer=lambda m: json.loads(m.decode('utf-8')),group_id='demo112215sgtrjwrykvjh',auto_offset_reset='earliest',
                           enable_auto_commit =False)
 
