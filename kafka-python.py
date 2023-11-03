@@ -6,7 +6,7 @@ from json import dumps
 # producer = KafkaProducer(bootstrap_servers=['localhost:9092'], value_serializer= lambda x: dumps(x).encode('utf-8'))
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
                          value_serializer=lambda x: dumps(x).encode('utf-8'))
-topic = 'mytopic6'
+topic = 'mytopic9'
 
 for i in range(1000):
     message = {"number":i}
