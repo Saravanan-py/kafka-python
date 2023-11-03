@@ -4,7 +4,7 @@ import time
 
 from kafka import KafkaProducer
 
-order_limit = 200
+order_limit = 20
 
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
                          value_serializer=lambda x: json.dumps(x).encode('utf-8'))
