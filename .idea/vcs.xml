@@ -3,6 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/news-pro" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/order-kafka/python-kafka-demo" vcs="Git" />
   </component>
 </project>
