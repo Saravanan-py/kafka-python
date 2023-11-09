@@ -18,8 +18,13 @@ class MyConsumerRebalanceListener(kafka.ConsumerRebalanceListener):
         print('*' * 50)
 
 
+def serialize_data(x):
+    return json.loads(x.decode('utf-8'))
+
+
+
 consumer = KafkaConsumer(bootstrap_servers=['localhost:9092'],
-                         value_deserializer=lambda m: json.loads(m.decode('utf-8')),
+                         value_deserializer=serialize_data,
                          group_id='demo112215sgtrjwrykvjh', auto_offset_reset='latest',
                          enable_auto_commit=False, partition_assignment_strategy=[RangePartitionAssignor])
 

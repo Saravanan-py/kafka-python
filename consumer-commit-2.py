@@ -3,7 +3,7 @@ from kafka import TopicPartition, OffsetAndMetadata
 from time import sleep
 import json
 
-consumer = KafkaConsumer('sample', bootstrap_servers=['localhost:9092'],
+consumer = KafkaConsumer('sample1', bootstrap_servers=['localhost:9092'],
                          value_deserializer=lambda m: json.loads(m.decode('utf-8')), group_id='demo112215sgtrjwrykvjh',
                          auto_offset_reset='earliest',
                          enable_auto_commit=False)
@@ -20,7 +20,7 @@ for message in consumer:
     om = OffsetAndMetadata(message.offset + 1, message.timestamp)
     consumer.commit({tp: om})
     print('*' * 100)
-    sleep(4)
+    sleep(1)
 
 
 
